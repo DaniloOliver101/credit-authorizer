@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/controle_financeiro
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
