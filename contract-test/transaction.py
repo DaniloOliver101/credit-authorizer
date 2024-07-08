@@ -6,14 +6,15 @@ url = 'http://localhost:8080/v1/transaction/'
 # Dados que você deseja enviar na requisição POST
 # Neste caso, não estamos enviando dados, mas você pode adicionar conforme necessário
 data = {
-	"account": "123",
-	"totalAmount": 100.00,
-	"mcc": "5811",
-	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+  "account": 1,
+  "totalAmount": 50.00,
+  "mcc": "5413",
+  "merchant": "UBER EATS SAO PAULO BR"
 }
 
 
-# Fazendo a requisição POST
+
+
 response = requests.post(url, json=data)
 
 # Imprimindo o status code da resposta

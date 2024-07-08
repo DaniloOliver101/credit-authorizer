@@ -5,13 +5,13 @@ import br.com.app.credit_authorizer.exception.NotFoundException
 import br.com.app.credit_authorizer.model.Account
 import br.com.app.credit_authorizer.model.Merchant
 import br.com.app.credit_authorizer.model.ResponseCode
-import br.com.app.credit_authorizer.model.ResponseCode.*
 import br.com.app.credit_authorizer.model.Transaction
 import br.com.app.credit_authorizer.repository.AccountRepository
 import br.com.app.credit_authorizer.repository.MerchantRepository
 import br.com.app.credit_authorizer.repository.TransactionRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class TransactionService(
@@ -19,20 +19,30 @@ class TransactionService(
     val transactionRepository: TransactionRepository,
     val merchantRepository: MerchantRepository
 ) {
+
     @Transactional
     fun processTransaction(transactionDto: TransactionDto): Map<String, String> {
         val account = accountRepository.findById(transactionDto.account)
             .orElseThrow { NotFoundException("Account not found") }
-        val merchant = Merchant(mcc = transactionDto.mcc, name = transactionDto.merchant)
+
+        val merchantName = transactionDto.merchant.uppercase(Locale.getDefault())
+        val mcc = merchantRepository.findMccByName(merchantName) ?: transactionDto.mcc
+
+        val merchant = Merchant(mcc = mcc, name = transactionDto.merchant)
         val responseCode = authorizeTransaction(transactionDto.totalAmount, merchant, account)
-        val transaction = Transaction(
-            accountId = account.accountId,
-            mcc = transactionDto.mcc,
-            totalAmount = transactionDto.totalAmount,
-            merchant = transactionDto.merchant,
-            code = responseCode.code
-        )
-        transactionRepository.save(transaction)
+
+        val transaction = account.id?.let {
+            Transaction(
+                accountId = it,
+                mcc = mcc,
+                totalAmount = transactionDto.totalAmount,
+                merchant = transactionDto.merchant,
+                code = responseCode.code
+            )
+        }
+        if (transaction != null) {
+            transactionRepository.save(transaction)
+        }
         return mapOf("code" to responseCode.code)
     }
 
@@ -45,7 +55,6 @@ class TransactionService(
                 else -> processCashTransaction(totalAmount, account)
             }
         } else {
-
             processCashTransaction(totalAmount, account)
         }
     }
@@ -53,37 +62,42 @@ class TransactionService(
     private fun processFoodTransaction(totalAmount: Double, account: Account): ResponseCode {
         return if (account.foodBalance >= totalAmount) {
             account.foodBalance -= totalAmount
-            APPROVED
+            accountRepository.save(account)
+            ResponseCode.APPROVED
         } else if (account.foodBalance + account.cashBalance >= totalAmount) {
             val remainingAmount = totalAmount - account.foodBalance
             account.cashBalance -= remainingAmount
             account.foodBalance = 0.0
-            APPROVED
+            accountRepository.save(account)
+            ResponseCode.APPROVED
         } else {
-            INSUFFICIENT_FUNDS
+            ResponseCode.INSUFFICIENT_FUNDS
         }
     }
 
     private fun processMealTransaction(totalAmount: Double, account: Account): ResponseCode {
         return if (account.mealBalance >= totalAmount) {
             account.mealBalance -= totalAmount
-            APPROVED
+            accountRepository.save(account)
+            ResponseCode.APPROVED
         } else if (account.mealBalance + account.cashBalance >= totalAmount) {
             val remainingAmount = totalAmount - account.mealBalance
             account.cashBalance -= remainingAmount
             account.mealBalance = 0.0
-            APPROVED
+            accountRepository.save(account)
+            ResponseCode.APPROVED
         } else {
-            INSUFFICIENT_FUNDS
+            ResponseCode.INSUFFICIENT_FUNDS
         }
     }
 
     private fun processCashTransaction(totalAmount: Double, account: Account): ResponseCode {
         return if (account.cashBalance >= totalAmount) {
             account.cashBalance -= totalAmount
-            APPROVED
+            accountRepository.save(account)
+            ResponseCode.APPROVED
         } else {
-            INSUFFICIENT_FUNDS
+            ResponseCode.INSUFFICIENT_FUNDS
         }
     }
 
@@ -91,5 +105,3 @@ class TransactionService(
         return transactionRepository.findAll()
     }
 }
-
-

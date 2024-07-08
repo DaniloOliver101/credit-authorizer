@@ -1,4 +1,4 @@
-package br.com.app.credit_authorizer.service
+package br.com.app.credit_authorizer
 
 import br.com.app.credit_authorizer.dto.TransactionDto
 import br.com.app.credit_authorizer.exception.NotFoundException
@@ -7,6 +7,7 @@ import br.com.app.credit_authorizer.model.ResponseCode
 import br.com.app.credit_authorizer.repository.AccountRepository
 import br.com.app.credit_authorizer.repository.MerchantRepository
 import br.com.app.credit_authorizer.repository.TransactionRepository
+import br.com.app.credit_authorizer.service.TransactionService
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.BeforeEach
@@ -29,7 +30,7 @@ class TransactionServiceTest {
 
     @Test
     fun `processTransaction should approve transaction with mcc 5412`() {
-        val account = Account(accountId = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
+        val account = Account(id = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
         val transactionDto = TransactionDto(account = 1, mcc = "5412", merchant = "Test Merchant", totalAmount = 30.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.of(account))
@@ -43,7 +44,7 @@ class TransactionServiceTest {
 
     @Test
     fun `processTransaction should approve transaction with mcc 5812`() {
-        val account = Account(accountId = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
+        val account = Account(id = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
         val transactionDto = TransactionDto(account = 1, mcc = "5812", merchant = "Test Merchant", totalAmount = 30.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.of(account))
@@ -57,7 +58,7 @@ class TransactionServiceTest {
 
     @Test
     fun `processTransaction should deny transaction with insufficient funds`() {
-        val account = Account(accountId = 1, foodBalance = 10.0, mealBalance = 10.0, cashBalance = 10.0)
+        val account = Account(id = 1, foodBalance = 10.0, mealBalance = 10.0, cashBalance = 10.0)
         val transactionDto = TransactionDto(account = 1, mcc = "5412", merchant = "Test Merchant", totalAmount = 50.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.of(account))
@@ -82,7 +83,7 @@ class TransactionServiceTest {
 
     @Test
     fun `processTransaction should approve transaction with non-configured mcc using cashBalance`() {
-        val account = Account(accountId = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
+        val account = Account(id = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
         val transactionDto = TransactionDto(account = 1, mcc = "1234", merchant = "Test Merchant", totalAmount = 30.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.of(account))
@@ -95,7 +96,7 @@ class TransactionServiceTest {
 
     @Test
     fun `processTransaction should substitute mcc based on merchant name from database`() {
-        val account = Account(accountId = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
+        val account = Account(id = 1, foodBalance = 100.0, mealBalance = 50.0, cashBalance = 200.0)
         val transactionDto = TransactionDto(account = 1, mcc = "9999", merchant = "UBER EATS", totalAmount = 30.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.of(account))

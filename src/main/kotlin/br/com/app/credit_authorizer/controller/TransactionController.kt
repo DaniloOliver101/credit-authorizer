@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 class TransactionController(val transactionService: TransactionService) {
     @PostMapping("/")
     fun sendTransaction(@RequestBody transaction: TransactionDto): ResponseEntity<Map<String, String>> {
+        print("Post recebido")
         val processTransaction = transactionService.processTransaction(transaction)
         return ResponseEntity.status(HttpStatus.OK).body(processTransaction)
     }

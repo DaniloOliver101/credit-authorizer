@@ -1,0 +1,268 @@
+> Task :checkKotlinGradlePluginConfigurationErrors
+> Task :compileKotlin UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.1)
+
+2024-07-07T22:06:12.642-03:00  INFO 5848 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Starting CreditAuthorizerApplicationKt using Java 17.0.10 with PID 5848 (C:\credit-authorizer\build\classes\kotlin\main started by danil in C:\credit-authorizer)
+2024-07-07T22:06:12.645-03:00  INFO 5848 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T22:06:13.528-03:00  INFO 5848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07T22:06:13.585-03:00  INFO 5848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-07-07T22:06:13.753-03:00  INFO 5848 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0005fa82-ef83-3d83-b68a-2eddfff12565
+2024-07-07T22:06:14.388-03:00  INFO 5848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T22:06:14.402-03:00  INFO 5848 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T22:06:14.403-03:00  INFO 5848 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T22:06:14.466-03:00  INFO 5848 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-07T22:06:14.467-03:00  INFO 5848 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1779 ms
+2024-07-07T22:06:14.574-03:00  INFO 5848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-07T22:06:14.712-03:00  INFO 5848 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-07T22:06:14.713-03:00  INFO 5848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-07T22:06:14.722-03:00  INFO 5848 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-07T22:06:14.989-03:00  INFO 5848 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.2)
+2024-07-07T22:06:14.998-03:00  WARN 5848 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024-07-07T22:06:15.018-03:00  INFO 5848 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2024-07-07T22:06:15.021-03:00  INFO 5848 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.012s)
+2024-07-07T22:06:15.026-03:00  INFO 5848 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2024-07-07T22:06:15.055-03:00  INFO 5848 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2024-07-07T22:06:15.060-03:00  INFO 5848 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Create tables"
+2024-07-07T22:06:15.078-03:00  INFO 5848 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Insert data"
+2024-07-07T22:06:15.086-03:00  INFO 5848 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.011s)
+2024-07-07T22:06:15.154-03:00  INFO 5848 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07T22:06:15.207-03:00  INFO 5848 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-07T22:06:15.241-03:00  INFO 5848 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-07T22:06:15.511-03:00  INFO 5848 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07T22:06:16.297-03:00  INFO 5848 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07T22:06:16.301-03:00  INFO 5848 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07T22:06:16.834-03:00  INFO 5848 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07T22:06:17.197-03:00  WARN 5848 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07T22:06:17.971-03:00  INFO 5848 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-07T22:06:18.038-03:00  INFO 5848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T22:06:18.146-03:00  INFO 5848 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Started CreditAuthorizerApplicationKt in 5.994 seconds (process running for 6.315)
+2024-07-07T22:06:22.843-03:00  INFO 5848 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-07T22:06:22.843-03:00  INFO 5848 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-07T22:06:22.844-03:00  INFO 5848 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    insert 
+    into
+        account
+        (cash_balance, food_balance, meal_balance, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Post recebidoHibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        m1_0.mcc 
+    from
+        merchant m1_0 
+    where
+        m1_0.name=?
+Hibernate: 
+    insert 
+    into
+        transactions
+        (account_id, code, mcc, merchant, total_amount, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        account 
+    set
+        cash_balance=?,
+        food_balance=?,
+        meal_balance=? 
+    where
+        id=?
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Post recebidoHibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        m1_0.mcc 
+    from
+        merchant m1_0 
+    where
+        m1_0.name=?
+Hibernate: 
+    insert 
+    into
+        transactions
+        (account_id, code, mcc, merchant, total_amount, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        account 
+    set
+        cash_balance=?,
+        food_balance=?,
+        meal_balance=? 
+    where
+        id=?
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    insert 
+    into
+        account
+        (cash_balance, food_balance, meal_balance, id) 
+    values
+        (?, ?, ?, default)
+Post recebidoHibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        m1_0.mcc 
+    from
+        merchant m1_0 
+    where
+        m1_0.name=?
+Hibernate: 
+    insert 
+    into
+        transactions
+        (account_id, code, mcc, merchant, total_amount, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        account 
+    set
+        cash_balance=?,
+        food_balance=?,
+        meal_balance=? 
+    where
+        id=?
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Post recebidoHibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
+Hibernate: 
+    select
+        m1_0.mcc 
+    from
+        merchant m1_0 
+    where
+        m1_0.name=?
+Hibernate: 
+    insert 
+    into
+        transactions
+        (account_id, code, mcc, merchant, total_amount, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        account 
+    set
+        cash_balance=?,
+        food_balance=?,
+        meal_balance=? 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        account
+        (cash_balance, food_balance, meal_balance, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.cash_balance,
+        a1_0.food_balance,
+        a1_0.meal_balance 
+    from
+        account a1_0 
+    where
+        a1_0.id=?
