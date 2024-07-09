@@ -1,9 +1,9 @@
 > Task :checkKotlinGradlePluginConfigurationErrors
 > Task :compileKotlin UP-TO-DATE
 > Task :compileJava NO-SOURCE
-> Task :processResources
-> Task :classes
-> Task :resolveMainClassName
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
 
 > Task :bootRun
 
@@ -16,129 +16,42 @@
 
  :: Spring Boot ::                (v3.3.1)
 
-2024-07-08T22:27:54.836-03:00  INFO 18812 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Starting CreditAuthorizerApplicationKt using Java 17.0.10 with PID 18812 (C:\credit-authorizer\build\classes\kotlin\main started by danil in C:\credit-authorizer)
-2024-07-08T22:27:54.839-03:00  INFO 18812 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : No active profile set, falling back to 1 default profile: "default"
-2024-07-08T22:27:55.608-03:00  INFO 18812 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-08T22:27:55.659-03:00  INFO 18812 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
-2024-07-08T22:27:55.783-03:00  INFO 18812 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0005fa82-ef83-3d83-b68a-2eddfff12565
-2024-07-08T22:27:56.253-03:00  INFO 18812 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-08T22:27:56.263-03:00  INFO 18812 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-08T22:27:56.264-03:00  INFO 18812 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-08T22:27:56.319-03:00  INFO 18812 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-08T22:27:56.319-03:00  INFO 18812 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1441 ms
-2024-07-08T22:27:56.416-03:00  INFO 18812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-08T22:27:56.549-03:00  INFO 18812 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-07-08T22:27:56.550-03:00  INFO 18812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-08T22:27:56.558-03:00  INFO 18812 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-07-08T22:27:56.786-03:00  INFO 18812 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.2)
-2024-07-08T22:27:56.793-03:00  WARN 18812 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2024-07-08T22:27:56.811-03:00  INFO 18812 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2024-07-08T22:27:56.813-03:00  INFO 18812 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.009s)
-2024-07-08T22:27:56.818-03:00  INFO 18812 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2024-07-08T22:27:56.846-03:00  INFO 18812 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2024-07-08T22:27:56.851-03:00  INFO 18812 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Create tables"
-2024-07-08T22:27:56.868-03:00  INFO 18812 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Insert data"
-2024-07-08T22:27:56.875-03:00  INFO 18812 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.009s)
-2024-07-08T22:27:56.939-03:00  INFO 18812 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-08T22:27:56.978-03:00  INFO 18812 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-08T22:27:57.004-03:00  INFO 18812 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-08T22:27:57.233-03:00  INFO 18812 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-08T22:27:57.920-03:00  INFO 18812 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-08T22:27:57.922-03:00  INFO 18812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-08T22:27:58.447-03:00  INFO 18812 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-08T22:27:58.774-03:00  WARN 18812 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-08T22:27:59.462-03:00  INFO 18812 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-07-08T22:27:59.529-03:00  INFO 18812 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-08T22:27:59.633-03:00  INFO 18812 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Started CreditAuthorizerApplicationKt in 5.27 seconds (process running for 5.564)
-2024-07-08T22:28:15.575-03:00  INFO 18812 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-08T22:28:15.575-03:00  INFO 18812 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-08T22:28:15.576-03:00  INFO 18812 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-08T22:28:15.655-03:00  INFO 18812 --- [nio-8080-exec-1] b.c.a.c.service.AccountService           : Creating account with data: Account(id=null, foodBalance=500.0, mealBalance=500.0, cashBalance=1000.0)
-Hibernate: 
-    insert 
-    into
-        account
-        (cash_balance, food_balance, meal_balance, id) 
-    values
-        (?, ?, ?, default)
-2024-07-08T22:28:15.712-03:00  INFO 18812 --- [nio-8080-exec-1] b.c.a.c.service.AccountService           : Account created successfully with id: 1
-2024-07-08T22:28:21.766-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.c.TransactionController          : TransactionController - sendTransaction: Start processing transaction: TransactionDto(account=1, totalAmount=50.0, mcc=5413, merchant=UBER EATS SAO PAULO BR)
-2024-07-08T22:28:21.767-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Processing transaction TransactionDto(account=1, totalAmount=50.0, mcc=5413, merchant=UBER EATS SAO PAULO BR)
-Hibernate: 
-    select
-        a1_0.id,
-        a1_0.cash_balance,
-        a1_0.food_balance,
-        a1_0.meal_balance 
-    from
-        account a1_0 
-    where
-        a1_0.id=?
-Hibernate: 
-    select
-        m1_0.mcc 
-    from
-        merchant m1_0 
-    where
-        m1_0.name=?
-2024-07-08T22:28:21.823-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.service.TransactionService       : TransactionService - authorizeTransaction: Authorizing transaction for merchant UBER EATS SAO PAULO BR
-2024-07-08T22:28:21.824-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.service.TransactionService       : TransactionService - processCashTransaction: Processing cash transaction
-Hibernate: 
-    insert 
-    into
-        transactions
-        (account_id, code, mcc, merchant, total_amount, id) 
-    values
-        (?, ?, ?, ?, ?, default)
-2024-07-08T22:28:21.827-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Transaction saved successfully
-2024-07-08T22:28:21.827-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Transaction processed with code: 00
-Hibernate: 
-    update
-        account 
-    set
-        cash_balance=?,
-        food_balance=?,
-        meal_balance=? 
-    where
-        id=?
-2024-07-08T22:28:21.835-03:00  INFO 18812 --- [nio-8080-exec-3] b.c.a.c.c.TransactionController          : TransactionController - sendTransaction: Processing finished with code: {code=00}
-2024-07-08T22:41:32.448-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.c.TransactionController          : TransactionController - sendTransaction: Start processing transaction: TransactionDto(account=1, totalAmount=50.0, mcc=541, merchant=UBER EATS SAO PAULO BR)
-2024-07-08T22:41:32.448-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Processing transaction TransactionDto(account=1, totalAmount=50.0, mcc=541, merchant=UBER EATS SAO PAULO BR)
-Hibernate: 
-    select
-        a1_0.id,
-        a1_0.cash_balance,
-        a1_0.food_balance,
-        a1_0.meal_balance 
-    from
-        account a1_0 
-    where
-        a1_0.id=?
-Hibernate: 
-    select
-        m1_0.mcc 
-    from
-        merchant m1_0 
-    where
-        m1_0.name=?
-2024-07-08T22:41:32.452-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.service.TransactionService       : TransactionService - authorizeTransaction: Authorizing transaction for merchant UBER EATS SAO PAULO BR
-2024-07-08T22:41:32.452-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.service.TransactionService       : TransactionService - processCashTransaction: Processing cash transaction
-Hibernate: 
-    insert 
-    into
-        transactions
-        (account_id, code, mcc, merchant, total_amount, id) 
-    values
-        (?, ?, ?, ?, ?, default)
-2024-07-08T22:41:32.453-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Transaction saved successfully
-2024-07-08T22:41:32.453-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.service.TransactionService       : TransactionService - processTransaction: Transaction processed with code: 00
-Hibernate: 
-    update
-        account 
-    set
-        cash_balance=?,
-        food_balance=?,
-        meal_balance=? 
-    where
-        id=?
-2024-07-08T22:41:32.454-03:00  INFO 18812 --- [nio-8080-exec-5] b.c.a.c.c.TransactionController          : TransactionController - sendTransaction: Processing finished with code: {code=00}
+2024-07-09T16:21:12.867-03:00  INFO 28708 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Starting CreditAuthorizerApplicationKt using Java 17.0.10 with PID 28708 (C:\credit-authorizer\build\classes\kotlin\main started by danil in C:\credit-authorizer)
+2024-07-09T16:21:12.870-03:00  INFO 28708 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : No active profile set, falling back to 1 default profile: "default"
+2024-07-09T16:21:13.732-03:00  INFO 28708 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-09T16:21:13.780-03:00  INFO 28708 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2024-07-09T16:21:13.915-03:00  INFO 28708 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=72f6bdbf-98dd-37f7-9d9e-613f93d59a04
+2024-07-09T16:21:14.428-03:00  INFO 28708 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-09T16:21:14.439-03:00  INFO 28708 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-09T16:21:14.439-03:00  INFO 28708 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-09T16:21:14.510-03:00  INFO 28708 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-09T16:21:14.511-03:00  INFO 28708 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1600 ms
+2024-07-09T16:21:14.614-03:00  INFO 28708 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-09T16:21:14.765-03:00  INFO 28708 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-07-09T16:21:14.767-03:00  INFO 28708 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-09T16:21:14.775-03:00  INFO 28708 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-07-09T16:21:15.035-03:00  INFO 28708 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.2)
+2024-07-09T16:21:15.043-03:00  WARN 28708 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024-07-09T16:21:15.060-03:00  INFO 28708 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2024-07-09T16:21:15.062-03:00  INFO 28708 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2024-07-09T16:21:15.067-03:00  INFO 28708 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2024-07-09T16:21:15.096-03:00  INFO 28708 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2024-07-09T16:21:15.101-03:00  INFO 28708 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Create tables"
+2024-07-09T16:21:15.117-03:00  INFO 28708 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Insert data"
+2024-07-09T16:21:15.124-03:00  INFO 28708 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.009s)
+2024-07-09T16:21:15.194-03:00  INFO 28708 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-09T16:21:15.240-03:00  INFO 28708 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-09T16:21:15.269-03:00  INFO 28708 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-09T16:21:15.557-03:00  INFO 28708 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-09T16:21:16.255-03:00  INFO 28708 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-09T16:21:16.258-03:00  INFO 28708 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-09T16:21:16.797-03:00  INFO 28708 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-09T16:21:17.144-03:00  WARN 28708 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-09T16:21:18.136-03:00  INFO 28708 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-09T16:21:18.200-03:00  INFO 28708 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-09T16:21:18.304-03:00  INFO 28708 --- [           main] b.c.a.c.CreditAuthorizerApplicationKt    : Started CreditAuthorizerApplicationKt in 5.912 seconds (process running for 6.212)
+2024-07-09T16:21:32.317-03:00  INFO 28708 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-09T16:21:32.318-03:00  INFO 28708 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-09T16:21:32.319-03:00  INFO 28708 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Deseja finalizar o arquivo em lotes (S/N)? 
+Deseja finalizar o arquivo em lotes (S/N)? 

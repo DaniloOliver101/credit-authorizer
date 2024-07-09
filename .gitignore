@@ -37,4 +37,11 @@ build/
 .factorypath
 .project
 .settings
-.
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VSCode
+.vscode/
