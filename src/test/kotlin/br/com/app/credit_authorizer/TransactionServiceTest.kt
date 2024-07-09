@@ -1,7 +1,6 @@
 package br.com.app.credit_authorizer
 
 import br.com.app.credit_authorizer.dto.TransactionDto
-import br.com.app.credit_authorizer.exception.NotFoundException
 import br.com.app.credit_authorizer.model.Account
 import br.com.app.credit_authorizer.model.ResponseCode
 import br.com.app.credit_authorizer.repository.AccountRepository
@@ -9,7 +8,6 @@ import br.com.app.credit_authorizer.repository.MerchantRepository
 import br.com.app.credit_authorizer.repository.TransactionRepository
 import br.com.app.credit_authorizer.service.TransactionService
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.mock
@@ -54,6 +52,7 @@ class TransactionServiceTest {
         assertEquals(ResponseCode.APPROVED.code, response["code"])
         assertEquals(20.0, account.mealBalance)
         assertEquals(200.0, account.cashBalance)
+        assertEquals(            transactionService.processTransaction(transactionDto),mapOf("code" to ResponseCode.APPROVED.code))
     }
 
     @Test
@@ -68,17 +67,18 @@ class TransactionServiceTest {
         assertEquals(ResponseCode.INSUFFICIENT_FUNDS.code, response["code"])
         assertEquals(10.0, account.foodBalance)
         assertEquals(10.0, account.cashBalance)
+        assertEquals(            transactionService.processTransaction(transactionDto),mapOf("code" to ResponseCode.INSUFFICIENT_FUNDS.code))
     }
 
     @Test
-    fun `processTransaction should throw NotFoundException for non-existent account`() {
+    fun `processTransaction should deny transaction with otherErrors `() {
         val transactionDto = TransactionDto(account = 1, mcc = "5412", merchant = "Test Merchant", totalAmount = 30.0)
 
         whenever(accountRepository.findById(1)).thenReturn(Optional.empty())
 
-        assertThrows(NotFoundException::class.java) {
-            transactionService.processTransaction(transactionDto)
-        }
+
+assertEquals(            transactionService.processTransaction(transactionDto),mapOf("code" to ResponseCode.OTHER_ERROR.code))
+
     }
 
     @Test
@@ -107,5 +107,6 @@ class TransactionServiceTest {
         assertEquals(ResponseCode.APPROVED.code, response["code"])
         assertEquals(20.0, account.mealBalance)
         assertEquals(200.0, account.cashBalance)
+        assertEquals(            transactionService.processTransaction(transactionDto),mapOf("code" to ResponseCode.APPROVED.code))
     }
 }

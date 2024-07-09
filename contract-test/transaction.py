@@ -8,7 +8,7 @@ url = 'http://localhost:8080/v1/transaction/'
 data = {
   "account": 1,
   "totalAmount": 50.00,
-  "mcc": "5413",
+  "mcc": "541",
   "merchant": "UBER EATS SAO PAULO BR"
 }
 

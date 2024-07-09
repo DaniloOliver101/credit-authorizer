@@ -3,6 +3,7 @@ package br.com.app.credit_authorizer.controller
 import br.com.app.credit_authorizer.dto.TransactionDto
 import br.com.app.credit_authorizer.model.Transaction
 import br.com.app.credit_authorizer.service.TransactionService
+import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,16 +15,21 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/v1/transaction")
 class TransactionController(val transactionService: TransactionService) {
+    private val logger = LoggerFactory.getLogger(TransactionController::class.java)
+
     @PostMapping("/")
     fun sendTransaction(@RequestBody transaction: TransactionDto): ResponseEntity<Map<String, String>> {
-        print("Post recebido")
+        logger.info("TransactionController - sendTransaction: Start processing transaction: $transaction")
         val processTransaction = transactionService.processTransaction(transaction)
+        logger.info("TransactionController - sendTransaction: Processing finished with code: $processTransaction")
         return ResponseEntity.status(HttpStatus.OK).body(processTransaction)
     }
 
     @GetMapping("/")
     fun getTransactions(): ResponseEntity<MutableList<Transaction>> {
-        return ResponseEntity.status(HttpStatus.OK).body(transactionService.getTransactions())
-
+        logger.info("TransactionController - getTransactions: Listing all transactions")
+        val transactions = transactionService.getTransactions()
+        logger.info("TransactionController - getTransactions: Found ${transactions.size} transactions")
+        return ResponseEntity.status(HttpStatus.OK).body(transactions)
     }
 }
